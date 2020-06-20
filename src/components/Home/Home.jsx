@@ -6,23 +6,17 @@ class Home extends Component {
   state = {
   };
 
+  componentDidMount() {
+    this.getDinos();
+  }
 
 
-  getSummoner = (event) => {
+  getDinos = (event) => {
     this.props.dispatch({
-      type: "FETCH_SUMMONER",
-      payload: this.state.summonerName,
+      type: "FETCH_DINOS"
     });
-    console.log(this.state);
-    this.props.history.push(`/summoner/${this.props.store.summoner.accountId}`);
   };
 
-  handleChangeFor = (event) => {
-    this.setState({
-      summonerName: event.target.value,
-    });
-    console.log(this.state);
-  };
   render() {
     return (
       <div>

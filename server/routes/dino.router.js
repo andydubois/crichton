@@ -3,26 +3,19 @@ const pool = require("../modules/pool");
 require("dotenv").config();
 const axios = require("axios");
 const router = express.Router();
-//MundoScript
-let LeagueAPI = require("leagueapiwrapper");
-let leagueAPIKey = process.env.REACT_APP_RIOT_API_KEY;
-LeagueAPI = new LeagueAPI(leagueAPIKey, Region.NA);
 
-router.get("/:searchTerm", (req, res) => {
-  let summonerName = req.params.searchTerm;
-  LeagueAPI.initialize()
-    .then(() => {
-      return LeagueAPI.getSummonerByName(summonerName);
+router.get("/", (req, res) => {
+  const queryText = `
+  SELECT * FROM dino_table;`;
+  pool
+    .query(queryText)
+    .then(results => {
+      res.send(results.rows);
     })
-    .then(function (accountInfo) {
-      // do something with accountInfo
-      console.log("success server side summoner GET", accountInfo);
-      res.send(accountInfo);
-      console.log(accountInfo);
-    })
-    .catch((error) => {
-      console.log("error in server side summoner GET", error);
-    }); // LeagueAPI returned objects will now have details from DDRagon API.
+    .catch(error => {
+      console.log("error in server side dino GET", error);
+      res.sendStatus(500);
+    });
 });
 
 module.exports = router;
