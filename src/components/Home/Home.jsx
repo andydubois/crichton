@@ -79,14 +79,6 @@ class Home extends Component {
             {
               title: "Type",
               field: "type",
-              lookup: {
-                "Large Carnivore": "Large Carnivore",
-                "Giant Herbivore": "Giant Herbivore",
-                "Small Herbivore": "Small Herbivore",
-                "Medium Herbivore": "Medium Herbivore",
-                "Armored Herbivore": "Armored Herbivore",
-                "Small Carnivore": "Small Carnivore",
-              },
             },
             { title: "Base Rating", field: "base_rating", type: "numeric" },
             { title: "Rating @ 100%", field: "100_rating", type: "numeric" },
@@ -113,12 +105,14 @@ class Home extends Component {
             {
               title: "Social Minimum",
               field: "social_min",
-              type: "numeric",
+              customFilterAndSearch: (term, rowdata) =>
+                term <= rowdata.social_min,
             },
             {
               title: "Social Maximum",
               field: "social_max",
-              type: "numeric",
+              customFilterAndSearch: (term, rowdata) =>
+                term <= rowdata.social_max,
             },
             {
               title: "Comfort %",
@@ -147,6 +141,9 @@ class Home extends Component {
           options={{
             filtering: true,
             sorting: true,
+            cellStyle: {
+               backgroundColor: "rgba(0, 0, 0, .1)"
+            },
           }}
         />
 
