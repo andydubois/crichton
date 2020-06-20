@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 
 class Home extends Component {
   state = {
-    summonerName: "",
-    champCounts: {},
   };
 
 
@@ -28,18 +26,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.getSummoner}>
-          <input type='text' onChange={this.handleChangeFor} />
-          <button type='submit'>Search</button>
-        </form>
-        <div>{this.state.summonerName}</div>
-        {/* <div>
-                    <ul>
-                        {this.props.store.match.matches.map(champion => {
-                            return <ChampionList champion={champion} />;
-                        })}
-                    </ul>
-                </div> */}
+
       </div>
     );
   }
