@@ -3,11 +3,11 @@ import MaterialTable from "material-table";
 function BasicFiltering() {
   return (
     <MaterialTable
-      title='Basic Filtering Preview'
+      title='Jurassic World Dinosaur Filter'
       columns={[
         { title: "Name", field: "name" },
         { title: "Type", field: "type" },
-        { title: "Birth Year", field: "birthYear", type: "numeric" },
+        { title: "Base Rating", field: "base_Rating", type: "numeric" },
         // {
         //   title: "Birth Place",
         //   field: "birthCity",
@@ -15,7 +15,7 @@ function BasicFiltering() {
         // },
       ]}
       data={[
-        { name: "Mehmet", surname: "Baran", birthYear: 1987, birthCity: 63 },
+        { name: props.name, type: props.type, birthYear: 1987, birthCity: 63 },
         {
           name: "Zerya Betül",
           surname: "Baran",
