@@ -1,11 +1,17 @@
+@font-face {
+  font-family: "jurassic";
+  src: url("../../font/Jurassic_Park.ttf");
+}
+
 .App {
   text-align: center;
 }
 body {
   background-image: url(../../img/trexChase.png);
   background-size: 100%;
+  background-attachment: fixed;
   /* background-repeat: no-repeat;
-  background-attachment: fixed; */
+   */
 }
 
 .App-logo {
@@ -44,5 +50,22 @@ body {
 }
 
 .MuiPaper-root {
-  opacity: 0.8;
+  background-color: rgba(217, 143, 112, 0.76) !important;
+}
+
+.MTableHeader-header-13 {
+  background-color: rgba(217, 143, 112, 0.98) !important;
+}
+
+.MuiTypography-h6 {
+  font-family: "jurassic" !important;
+  font-size: 6rem !important;
+}
+
+.MuiTableCell-root {
+  font-weight: bold !important;
+}
+
+.MuiTableCell-head {
+  font-weight: bold !important;
 }

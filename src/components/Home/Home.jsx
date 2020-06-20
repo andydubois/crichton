@@ -1,21 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 //components
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import { SvgIconProps } from "@material-ui/core/SvgIcon";
+
 
 import Search from "@material-ui/icons/Search";
-import ViewColumn from "@material-ui/icons/ViewColumn";
 import SaveAlt from "@material-ui/icons/SaveAlt";
 import ChevronLeft from "@material-ui/icons/ChevronLeft";
 import ChevronRight from "@material-ui/icons/ChevronRight";
 import FirstPage from "@material-ui/icons/FirstPage";
 import LastPage from "@material-ui/icons/LastPage";
-import Add from "@material-ui/icons/Add";
 import Check from "@material-ui/icons/Check";
 import FilterList from "@material-ui/icons/FilterList";
 import Remove from "@material-ui/icons/Remove";
@@ -73,7 +66,7 @@ class Home extends Component {
             Search: Search,
             ThirdStateCheck: Remove,
           }}
-          title='Jurassic World Dinosaurs'
+          title='Jurassic World: Evolution - Dinosaur Database'
           columns={[
             { title: "Name", field: "name" },
             {
