@@ -1,10 +1,10 @@
-const summonerReducer = (state = [], action) => {
+const dinoReducer = (state = [], action) => {
     switch (action.type) {
-        case "SET_SUMMONER":
+        case "SET_DINOS":
             return action.payload;
         default:
             return state;
     }
 };
 
-export default summonerReducer;
+export default dinoReducer;
