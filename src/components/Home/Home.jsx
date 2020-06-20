@@ -60,10 +60,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <form>
-          <input type='text' onChange={this.handleChangeFor} />
-          <button>Search</button>
-        </form>
         <MaterialTable
           icons={{
             Check: Check,
@@ -83,9 +79,64 @@ class Home extends Component {
             {
               title: "Type",
               field: "type",
-              lookup: { "Large Carnivore": "Large Carnivore", "Giant Herbivore": "Giant Herbivore", "Small Herbivore": "Small Herbivore", "Medium Herbivore": "Medium Herbivore", "Armored Herbivore": "Armored Herbivore", "Small Carnivore": "Small Carnivore" },
+              lookup: {
+                "Large Carnivore": "Large Carnivore",
+                "Giant Herbivore": "Giant Herbivore",
+                "Small Herbivore": "Small Herbivore",
+                "Medium Herbivore": "Medium Herbivore",
+                "Armored Herbivore": "Armored Herbivore",
+                "Small Carnivore": "Small Carnivore",
+              },
             },
             { title: "Base Rating", field: "base_rating", type: "numeric" },
+            { title: "Rating @ 100%", field: "100_rating", type: "numeric" },
+            {
+              title: "$ Cost/rating @ 50%",
+              field: "cost_rating_50",
+              type: "numeric",
+            },
+            {
+              title: "$ Cost/rating @ 100%",
+              field: "cost_rating_100",
+              type: "numeric",
+            },
+            {
+              title: "Population Minimum",
+              field: "pop_min",
+              customFilterAndSearch: (term, rowdata) => term <= rowdata.pop_min,
+            },
+            {
+              title: "Population Maximum",
+              field: "pop_max",
+              customFilterAndSearch: (term, rowdata) => term >= rowdata.pop_max,
+            },
+            {
+              title: "Social Minimum",
+              field: "social_min",
+              type: "numeric",
+            },
+            {
+              title: "Social Maximum",
+              field: "social_max",
+              type: "numeric",
+            },
+            {
+              title: "Comfort %",
+              field: "comfort_percent",
+              type: "numeric",
+            },
+            {
+              title: "Forest Area",
+              field: "forest_area",
+              type: "numeric",
+            },
+            {
+              title: "Grass Area",
+              field: "grass_area",
+              type: "numeric",
+            },
+            { title: "Total Area", field: "total_area", type: "numeric" },
+
             // {
             //   title: "Birth Place",
             //   field: "birthCity",
@@ -95,6 +146,7 @@ class Home extends Component {
           data={this.props.store.dinoReducer}
           options={{
             filtering: true,
+            sorting: true,
           }}
         />
 
